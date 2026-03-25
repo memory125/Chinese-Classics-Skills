@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zhouyi-learning"
+version = "10.1.0"
+description = "周易学习技能：从零开始学习周易，包括入门知识、六十四卦查询、卦辞爻辞解读、起卦解卦、案例分析和每日练习"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "OpenClaw"}
+]
+keywords = [
+    "周易",
+    "易经",
+    "六十四卦",
+    "中国传统文化",
+    "学习工具"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Religion"
+]
+
+[project.scripts]
+zhouyi = "zhouyi_learning.main:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0"
+]
+
+[tool.setuptools]
+packages = ["zhouyi_learning"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v"

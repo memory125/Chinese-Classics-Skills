@@ -1,0 +1,8 @@
+# 周易学习技能 - Python 依赖
+# 本技能仅使用 Python 标准库，无外部依赖
+# 
+# Python 版本要求：>= 3.8
+# 操作系统：Linux / macOS / Windows
+#
+# 可选依赖（用于开发/测试）：
+# pytest>=7.0.0
