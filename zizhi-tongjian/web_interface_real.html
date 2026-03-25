@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 资治通鉴智慧锦囊 - RAG 检索系统</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .header { text-align: center; color: white; margin-bottom: 30px; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        
+        .search-box { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 30px; }
+        
+        .search-input { width: 100%; padding: 15px 20px; font-size: 18px; border: 2px solid #e0e0e0; border-radius: 10px; margin-bottom: 15px; }
+        
+        .search-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 15px 40px; font-size: 18px; border-radius: 10px; cursor: pointer; }
+        
+        .results-section { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; }
+        .results-section.active { display: block; }
+        
+        .result-card { background: #f8f9fa; border-left: 4px solid #667eea; padding: 20px; margin-bottom: 15px; border-radius: 8px; }
+        
+        .result-title { font-size: 1.3em; font-weight: bold; color: #333; margin-bottom: 10px; }
+        
+        .meta-tag { display: inline-block; background: #e3f2fd; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; margin-right: 8px; color: #1976d2; }
+        
+        .wisdom-label { font-weight: bold; color: #e65100; margin-bottom: 5px; }
+        
+        .related-cases { margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd; }
+        .related-label { font-weight: bold; color: #667eea; margin-bottom: 8px; }
+        
+        .loading { text-align: center; padding: 40px; display: none; }
+        .loading.active { display: block; }
+        
+        .spinner { border: 4px solid #f3f3f3; border-top: 4px solid #667eea; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 20px auto; }
+        
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .stats { background: #e8f5e9; padding: 15px; border-radius: 8px; margin-bottom: 20px; color: #2e7d32; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 资治通鉴智慧锦囊</h1>
+            <p>RAG 检索系统 v2.0 - 混合搜索 + 智能推荐</p>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="输入问题，如：'如何消除老板猜忌'、'创业风险'" class="search-input">
+            <button onclick="performSearch()" class="search-btn">🔍 搜索</button>
+        </div>
+        
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>正在检索历史智慧...</p>
+        </div>
+        
+        <div id="results" class="results-section">
+            <h2 style="margin-bottom: 20px;">📊 搜索结果</h2>
+            
+            <div id="stats" class="stats"></div>
+            
+            <div id="resultsList"></div>
+        </div>
+    </div>
+
+    <script>
+        async function performSearch() {
+            const query = document.getElementById('searchInput').value.trim();
+            
+            if (!query) {
+                alert("请输入搜索关键词");
+                return;
+            }
+            
+            // 显示加载状态
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('results').classList.remove('active');
+            
+            try {
+                // 调用本地 API (使用 fetch with mode: 'no-cors' 或直接 URL)
+                const url = `http://localhost:8081/search?q=${encodeURIComponent(query)}`;
+                
+                // 使用 window.open 方式避免 CORS 问题
+                const response = await fetch(url, {
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const results = await response.json();
+                
+                // 更新统计信息
+                document.getElementById('stats').innerHTML = `
+                    <strong>📊 搜索统计:</strong><br>
+                    • 查询：${query}<br>
+                    • 找到 ${results.length} 个相关案例<br>
+                    • 平均得分：${(results.reduce((a, b) => a + b.score, 0) / results.length).toFixed(2)}<br>
+                    • 搜索方法：关键词 + 向量融合
+                `;
+                
+                // 渲染结果
+                const resultsList = document.getElementById('resultsList');
+                resultsList.innerHTML = '';
+                
+                results.forEach((result, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'result-card';
+                    
+                    let relatedHTML = result.related && result.related.length > 0 ? 
+                        `<div class="related-cases">
+                            <div class="related-label">🔗 相关案例:</div>
+                            ${result.related.map(r => 
+                                `<span class="meta-tag">${r.name} (${r.relevance})</span>`
+                            ).join('')}
+                        </div>` : '';
+                    
+                    card.innerHTML = `
+                        <div class="result-title">
+                            ${index + 1}. ${result.title || result.name}
+                        </div>
+                        <div class="result-meta">
+                            <span class="meta-tag">得分：${(result.score * 100).toFixed(1)}%</span>
+                            <span class="meta-tag">方法：${result.method}</span>
+                            ${result.applications ? result.applications.map(app => 
+                                `<span class="meta-tag">${app}</span>`
+                            ).join('') : ''}
+                        </div>
+                        <div class="result-wisdom">
+                            <div class="wisdom-label">💡 核心智慧:</div>
+                            ${result.wisdom || '暂无描述'}
+                        </div>
+                        ${relatedHTML}
+                    `;
+                    
+                    resultsList.appendChild(card);
+                });
+                
+                // 显示结果
+                document.getElementById('loading').classList.remove('active');
+                document.getElementById('results').classList.add('active');
+                
+            } catch (error) {
+                console.error(error);
+                alert("搜索失败：" + error.message + "\n\n提示：请确保 API 服务器运行在端口 8081");
+                document.getElementById('loading').classList.remove('active');
+            }
+        }
+
+        // 支持回车键搜索
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

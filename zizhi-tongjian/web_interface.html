@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资治通鉴智慧锦囊</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-tab {
+            padding: 15px 30px;
+            background: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .nav-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .nav-tab.active {
+            background: #FFD700;
+            color: #333;
+        }
+        
+        .tab-content {
+            display: none;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 10px;
+        }
+        
+        .search-box {
+            margin: 30px 0;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.1em;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .search-btn {
+            width: 100%;
+            padding: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-btn:hover {
+            background: #5568d3;
+        }
+        
+        .results {
+            margin-top: 30px;
+        }
+        
+        .result-item {
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+        }
+        
+        .result-title {
+            font-size: 1.3em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .result-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .result-text {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .card {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 4px solid #FFD700;
+        }
+        
+        .card-title {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .card-content {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .personality-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .trait-bar {
+            background: #667eea;
+            height: 30px;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            line-height: 30px;
+            font-size: 0.9em;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 30px 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 20px;
+            width: 10px;
+            height: 10px;
+            background: #FFD700;
+            border-radius: 50%;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .ai-character {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .character-avatar {
+            width: 100px;
+            height: 100px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+        }
+        
+        .character-info h4 {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .character-title {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .chat-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        
+        .chat-message {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .user-message {
+            background: #667eea;
+            color: white;
+            margin-left: 20%;
+        }
+        
+        .ai-message {
+            background: white;
+            border: 2px solid #667eea;
+            margin-right: 20%;
+        }
+        
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .achievement-badge {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 4px solid #FFD700;
+        }
+        
+        .achievement-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-name {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .achievement-points {
+            color: #667eea;
+            margin-top: 5px;
+        }
+        
+        .leaderboard {
+            margin-top: 30px;
+        }
+        
+        .leaderboard-row {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        
+        .rank {
+            width: 40px;
+            height: 40px;
+            background: #FFD700;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .user-info {
+            flex: 1;
+        }
+        
+        .points {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .personality-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📜 资治通鉴智慧锦囊</h1>
+            <p>历史智慧 · 古今对话 · 深度洞察</p>
+        </div>
+        
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="switchTab('search')">🔍 搜索历史</button>
+            <button class="nav-tab" onclick="switchTab('character')">👤 人物分析</button>
+            <button class="nav-tab" onclick="switchTab('compare')">⚔️ 对比分析</button>
+            <button class="nav-tab" onclick="switchTab('simulation')">🎮 历史推演</button>
+            <button class="nav-tab" onclick="switchTab('debate')">🎯 历史辩论</button>
+            <button class="nav-tab" onclick="switchTab('ai-chat')">💬 AI 对话</button>
+            <button class="nav-tab" onclick="switchTab('game')">🏆 成就系统</button>
+        </div>
+        
+        <!-- 搜索 Tab -->
+        <div id="search" class="tab-content active">
+            <h2 class="section-title">🔍 搜索历史案例</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="输入关键词搜索历史案例，如：鸿门宴、刘邦、项羽、削藩...">
+                <button class="search-btn" onclick="searchHistory()">开始搜索</button>
+            </div>
+            <div class="results" id="searchResults"></div>
+        </div>
+        
+        <!-- 人物分析 Tab -->
+        <div id="character" class="tab-content">
+            <h2 class="section-title">👤 人物深度分析</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="card-title">刘邦</h3>
+                    <div class="card-content">
+                        <p><strong>朝代：</strong>西汉</p>
+                        <p><strong>生卒：</strong>前 256-前 195</p>
+                        <p><strong>身份：</strong>汉高祖</p>
+                        <div class="personality-grid">
+                            <div class="trait-bar" style="width:70%">果断 70%</div>
+                            <div class="trait-bar" style="width:40%">勇猛 40%</div>
+                            <div class="trait-bar" style="width:90%">政治 90%</div>
+                            <div class="trait-bar" style="width:95%">纳谏 95%</div>
+                            <div class="trait-bar" style="width:70%">统帅 70%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">项羽</h3>
+                    <div class="card-content">
+                        <p><strong>朝代：</strong>秦汉之际</p>
+                        <p><strong>生卒：</strong>前 232-前 202</p>
+                        <p><strong>身份：</strong>西楚霸王</p>
+                        <div class="personality-grid">
+                            <div class="trait-bar" style="width:30%">果断 30%</div>
+                            <div class="trait-bar" style="width:100%">勇猛 100%</div>
+                            <div class="trait-bar" style="width:20%">政治 20%</div>
+                            <div class="trait-bar" style="width:10%">纳谏 10%</div>
+                            <div class="trait-bar" style="width:90%">统帅 90%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline">
+                <h3 style="margin-bottom: 20px;">刘邦时间线</h3>
+                <div class="timeline-item">
+                    <div class="timeline-date">公元前 256 年</div>
+                    <div>刘邦出生</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">公元前 209 年</div>
+                    <div>刘邦起兵反秦</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">公元前 206 年</div>
+                    <div>鸿门宴，刘邦脱险</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">公元前 202 年</div>
+                    <div>建立汉朝，刘邦称帝</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 对比分析 Tab -->
+        <div id="compare" class="tab-content">
+            <h2 class="section-title">⚔️ 人物对比分析</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>对比维度</th>
+                        <th>刘邦</th>
+                        <th>项羽</th>
+                        <th>分析</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>果断性</strong></td>
+                        <td>70/100</td>
+                        <td>30/100</td>
+                        <td>刘邦的果断性明显强于项羽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>勇猛</strong></td>
+                        <td>40/100</td>
+                        <td>100/100</td>
+                        <td>项羽的勇猛明显强于刘邦</td>
+                    </tr>
+                    <tr>
+                        <td><strong>政治智慧</strong></td>
+                        <td>90/100</td>
+                        <td>20/100</td>
+                        <td>刘邦的政治智慧明显强于项羽</td>
+                    </tr>
+                    <tr>
+                        <td><strong>纳谏能力</strong></td>
+                        <td>95/100</td>
+                        <td>10/100</td>
+                        <td>刘邦的纳谏能力明显强于项羽</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="card">
+                <h3 class="card-title">核心结论</h3>
+                <div class="card-content">
+                    <p><strong>刘邦胜在：</strong>政治智慧、善于用人、能屈能伸</p>
+                    <p><strong>项羽优在：</strong>军事才能、勇猛无敌、个人魅力</p>
+                    <p><strong>历史启示：</strong>政治智慧高于军事才能，知人善任胜过个人勇武</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 历史推演 Tab -->
+        <div id="simulation" class="tab-content">
+            <h2 class="section-title">🎮 历史推演</h2>
+            <div class="card">
+                <h3 class="card-title">鸿门宴分支推演</h3>
+                <div class="card-content">
+                    <h4>场景设置</h4>
+                    <p>公元前 206 年，鸿门宴现场，项羽犹豫是否杀刘邦</p>
+                    
+                    <h4 style="margin: 20px 0;">分支推演结果</h4>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">分支 1：杀刘邦</div>
+                            <p><strong>概率：</strong>30%</p>
+                            <p><strong>触发条件：</strong>范增说服力强、项羽心情不佳、刘邦势力强大</p>
+                            <p><strong>直接后果：</strong>项羽成为最大实力，刘邦部将混乱</p>
+                            <p><strong>短期影响：</strong>项羽统一，但激化与秦残余矛盾</p>
+                            <p><strong>长期影响：</strong>项羽可能成为一代霸主，但秦残势力反扑</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">分支 2：不杀刘邦</div>
+                            <p><strong>概率：</strong>70%</p>
+                            <p><strong>触发条件：</strong>范增说服失败、项羽仁慈、过度自信</p>
+                            <p><strong>直接后果：</strong>刘邦脱险，获得喘息时间</p>
+                            <p><strong>短期影响：</strong>项羽暂时统一，但刘邦重建势力</p>
+                            <p><strong>长期影响：</strong>楚汉战争，项羽最终失败</p>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin: 20px 0;">历史相似性</h4>
+                    <div class="grid-2">
+                        <div>
+                            <strong>相似事件 1：澶渊之盟</strong><br>
+                            相似点：弱势一方通过外交手段避免战争<br>
+                            对比分析：刘邦 vs 宋真宗，都通过妥协获得喘息
+                        </div>
+                        <div>
+                            <strong>相似事件 2：杯酒释兵权</strong><br>
+                            相似点：政治智慧化解军事威胁<br>
+                            对比分析：刘邦隐忍 vs 赵匡胤主动
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 历史辩论 Tab -->
+        <div id="debate" class="tab-content">
+            <h2 class="section-title">🎯 历史辩论</h2>
+            <div class="card">
+                <h3 class="card-title">项羽应该杀刘邦吗？</h3>
+                
+                <div class="grid-2">
+                    <div>
+                        <h4 style="color: #667eea;">正方：应该杀</h4>
+                        <ul style="margin: 15px 0; line-height: 1.8;">
+                            <li>政治必要性：刘邦是项羽最大的政治对手，留着必成后患</li>
+                            <li>范增建议：范增足智多谋，建议必有深意</li>
+                            <li>短期安全：杀刘邦可消除眼前威胁，巩固统治</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #FF6B6B;">反方：不应该杀</h4>
+                        <ul style="margin: 15px 0; line-height: 1.8;">
+                            <li>道义立场：刘邦未犯大罪，杀之不合道义</li>
+                            <li>政治智慧：刘邦已投降，杀之显得自己气量小</li>
+                            <li>性格决定：项羽性格仁慈，杀刘邦违背本性</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h4 style="margin: 20px 0;">历史裁判观点</h4>
+                <div class="card-content">
+                    <p><strong>司马光：</strong>项羽不杀刘邦，失其时矣。当断不断，反受其乱。</p>
+                    <p><strong>毛泽东：</strong>项羽优柔寡断，妇人之仁，终致败亡。</p>
+                    <p><strong>柏杨：</strong>鸿门宴是项羽性格决定的必然结果，非勇而败。</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI 对话 Tab -->
+        <div id="ai-chat" class="tab-content">
+            <h2 class="section-title">💬 AI 历史人物对话</h2>
+            <div class="ai-character">
+                <div class="character-avatar">🐼</div>
+                <div class="character-info">
+                    <h4>诸葛亮</h4>
+                    <div class="character-title">蜀汉丞相</div>
+                    <p>足智多谋 · 忠诚 · 谨慎 · 博学</p>
+                </div>
+            </div>
+            <div class="ai-character">
+                <div class="character-avatar">👑</div>
+                <div class="character-info">
+                    <h4>李世民</h4>
+                    <div class="character-title">唐太宗</div>
+                    <p>英明 · 勇猛 · 包容 · 政治智慧</p>
+                </div>
+            </div>
+            <div class="ai-character">
+                <div class="character-avatar">🐯</div>
+                <div class="character-info">
+                    <h4>曹操</h4>
+                    <div class="character-title">魏武帝</div>
+                    <p>奸雄 · 才华横溢 · 务实 · 复杂</p>
+                </div>
+            </div>
+            
+            <div class="chat-box">
+                <h3 style="margin-bottom: 20px;">对话示例</h3>
+                <div class="chat-message ai-message">
+                    <strong>诸葛亮：</strong>足下所问，甚合亮之心。亮以为：世事无常，唯有智慧可破局。
+                </div>
+                <div class="chat-message user-message">
+                    <strong>用户：</strong>如何治国安邦？
+                </div>
+                <div class="chat-message ai-message">
+                    <strong>诸葛亮：</strong>此问题关乎治国安邦，亮观之：用人如器，各取所长。非学无以广才，非志无以成学。
+                </div>
+            </div>
+        </div>
+        
+        <!-- 成就系统 Tab -->
+        <div id="game" class="tab-content">
+            <h2 class="section-title">🏆 成就系统</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>当前进度</h3>
+                    <div class="card">
+                        <p><strong>总积分：</strong>500 分</p>
+                        <p><strong>当前等级：</strong>🌱 历史爱好者</p>
+                        <p><strong>解锁成就：</strong>2/10</p>
+                    </div>
+                    
+                    <h3 style="margin-top: 20px;">排行榜</h3>
+                    <div class="leaderboard">
+                        <div class="leaderboard-row">
+                            <div class="rank">1</div>
+                            <div class="user-info">用户 1</div>
+                            <div class="points">1000 分</div>
+                        </div>
+                        <div class="leaderboard-row">
+                            <div class="rank">2</div>
+                            <div class="user-info">用户 2</div>
+                            <div class="points">900 分</div>
+                        </div>
+                        <div class="leaderboard-row">
+                            <div class="rank">3</div>
+                            <div class="user-info">用户 3</div>
+                            <div class="points">800 分</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>成就徽章</h3>
+                    <div class="achievements">
+                        <div class="achievement-badge">
+                            <div class="achievement-icon">🏆</div>
+                            <div class="achievement-name">鸿门宴专家</div>
+                            <div class="achievement-points">50 分</div>
+                        </div>
+                        <div class="achievement-badge">
+                            <div class="achievement-icon">📜</div>
+                            <div class="achievement-name">推恩令大师</div>
+                            <div class="achievement-points">60 分</div>
+                        </div>
+                        <div class="achievement-badge">
+                            <div class="achievement-icon">⚔️</div>
+                            <div class="achievement-name">对比研究者</div>
+                            <div class="achievement-points">70 分</div>
+                        </div>
+                        <div class="achievement-badge">
+                            <div class="achievement-icon">📚</div>
+                            <div class="achievement-name">历史学者</div>
+                            <div class="achievement-points">200 分</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function switchTab(tabId) {
+            // 隐藏所有 tab 内容
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 移除所有 tab 按钮的 active 类
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 显示选中的 tab 内容
+            document.getElementById(tabId).classList.add('active');
+            
+            // 添加 active 类到对应的按钮
+            event.target.classList.add('active');
+        }
+        
+        function searchHistory() {
+            const query = document.getElementById('searchInput').value;
+            const resultsDiv = document.getElementById('searchResults');
+            
+            if (!query) {
+                resultsDiv.innerHTML = '<p style="color: #666; text-align: center;">请输入搜索关键词</p>';
+                return;
+            }
+            
+            // 模拟搜索结果
+            const mockResults = [
+                {
+                    title: `${query} 相关历史案例`,
+                    meta: '时间：公元前 206 年 | 类型：历史事件',
+                    text: '这是关于' + query + '的历史案例描述，包含详细的事件经过和人物分析...'
+                }
+            ];
+            
+            let html = '<h3 style="margin-bottom: 20px;">搜索结果</h3>';
+            mockResults.forEach(result => {
+                html += `
+                    <div class="result-item">
+                        <div class="result-title">${result.title}</div>
+                        <div class="result-meta">${result.meta}</div>
+                        <div class="result-text">${result.text}</div>
+                    </div>
+                `;
+            });
+            
+            resultsDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

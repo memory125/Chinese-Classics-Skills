@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 资治通鉴智慧锦囊 - RAG 检索系统</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .search-box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102,126,234,0.3);
+        }
+        
+        .search-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+        }
+        
+        .results-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+        
+        .results-section.active {
+            display: block;
+        }
+        
+        .result-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .result-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .result-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .result-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-tag {
+            background: #e8eaf6;
+            color: #3f51b5;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .result-wisdom {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border-left: 3px solid #ff9800;
+        }
+        
+        .wisdom-label {
+            font-weight: bold;
+            color: #e65100;
+            margin-bottom: 5px;
+        }
+        
+        .related-cases {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .related-label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+        
+        .loading.active {
+            display: block;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .stats {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 资治通鉴智慧锦囊</h1>
+            <p>RAG 检索系统 v2.0 - 混合搜索 + 智能推荐</p>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" 
+                   placeholder="输入问题，如：'如何消除老板猜忌'、'创业风险'"
+                   class="search-input">
+            <button onclick="performSearch()" class="search-btn">🔍 搜索</button>
+        </div>
+        
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>正在检索历史智慧...</p>
+        </div>
+        
+        <div id="results" class="results-section">
+            <h2 style="margin-bottom: 20px;">📊 搜索结果</h2>
+            
+            <div id="stats" class="stats"></div>
+            
+            <div id="resultsList"></div>
+        </div>
+    </div>
+
+    <script>
+        // RAG 系统接口 (模拟)
+        const RAG_API = {
+            async search(query, top_k = 5) {
+                // 模拟搜索延迟
+                await new Promise(resolve => setTimeout(resolve, 800));
+                
+                // 返回模拟结果
+                return [
+                    {
+                        name: "王翦求田问舍",
+                        score: 0.92,
+                        method: "keyword",
+                        title: "王翦求田问舍 - 消除猜忌",
+                        wisdom: "在权力中心，展示无害性比证明能力更重要。",
+                        applications: ["向上管理", "消除猜忌"],
+                        related: [
+                            { name: "郭子仪交权", relevance: "同一时期", score: 0.85 },
+                            { name: "萧何自污", relevance: "相似主题", score: 0.78 }
+                        ]
+                    },
+                    {
+                        name: "郭子仪交权",
+                        score: 0.87,
+                        method: "vector",
+                        title: "郭子仪 - 坦诚相见",
+                        wisdom: "主动分享功劳给上级，关键时刻展现'无威胁'信号。",
+                        applications: ["向上管理", "信任建立"],
+                        related: [
+                            { name: "王翦求田", relevance: "同一人物", score: 0.82 },
+                            { name: "韩信功高", relevance: "反面案例", score: 0.75 }
+                        ]
+                    }
+                ];
+            }
+        };
+
+        async function performSearch() {
+            const query = document.getElementById('searchInput').value.trim();
+            
+            if (!query) {
+                alert("请输入搜索关键词");
+                return;
+            }
+            
+            // 显示加载状态
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('results').classList.remove('active');
+            
+            try {
+                const results = await RAG_API.search(query);
+                
+                // 更新统计信息
+                document.getElementById('stats').innerHTML = `
+                    <strong>📊 搜索统计:</strong><br>
+                    • 查询：${query}<br>
+                    • 找到 ${results.length} 个相关案例<br>
+                    • 平均得分：${(results.reduce((a, b) => a + b.score, 0) / results.length).toFixed(2)}<br>
+                    • 搜索方法：关键词 + 向量融合
+                `;
+                
+                // 渲染结果
+                const resultsList = document.getElementById('resultsList');
+                resultsList.innerHTML = '';
+                
+                results.forEach((result, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'result-card';
+                    
+                    let relatedHTML = result.related ? 
+                        `<div class="related-cases">
+                            <div class="related-label">🔗 相关案例:</div>
+                            ${result.related.map(r => 
+                                `<span class="meta-tag">${r.name} (${r.relevance})</span>`
+                            ).join('')}
+                        </div>` : '';
+                    
+                    card.innerHTML = `
+                        <div class="result-title">
+                            ${index + 1}. ${result.title}
+                        </div>
+                        <div class="result-meta">
+                            <span class="meta-tag">得分：${(result.score * 100).toFixed(1)}%</span>
+                            <span class="meta-tag">方法：${result.method}</span>
+                            ${result.applications.map(app => 
+                                `<span class="meta-tag">${app}</span>`
+                            ).join('')}
+                        </div>
+                        <div class="result-wisdom">
+                            <div class="wisdom-label">💡 核心智慧:</div>
+                            ${result.wisdom}
+                        </div>
+                        ${relatedHTML}
+                    `;
+                    
+                    resultsList.appendChild(card);
+                });
+                
+                // 显示结果
+                document.getElementById('loading').classList.remove('active');
+                document.getElementById('results').classList.add('active');
+                
+            } catch (error) {
+                console.error(error);
+                alert("搜索失败：" + error.message);
+                document.getElementById('loading').classList.remove('active');
+            }
+        }
+
+        // 支持回车键搜索
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1753 @@
+{
+  "entities": {
+    "person:刘邦": {
+      "type": "person",
+      "name": "刘邦",
+      "properties": {
+        "cases": [
+          "鸿门宴",
+          "楚汉争霸"
+        ],
+        "period": "公元前 206 年"
+      }
+    },
+    "person:项羽": {
+      "type": "person",
+      "name": "项羽",
+      "properties": {
+        "cases": [
+          "鸿门宴",
+          "楚汉争霸"
+        ],
+        "period": "公元前 206 年"
+      }
+    },
+    "person:张良": {
+      "type": "person",
+      "name": "张良",
+      "properties": {
+        "cases": [
+          "鸿门宴"
+        ],
+        "period": "公元前 206 年"
+      }
+    },
+    "person:范增": {
+      "type": "person",
+      "name": "范增",
+      "properties": {
+        "cases": [
+          "鸿门宴"
+        ],
+        "period": "公元前 206 年"
+      }
+    },
+    "person:樊哙": {
+      "type": "person",
+      "name": "樊哙",
+      "properties": {
+        "cases": [
+          "鸿门宴"
+        ],
+        "period": "公元前 206 年"
+      }
+    },
+    "event:鸿门宴": {
+      "type": "event",
+      "name": "鸿门宴 - 生死决策",
+      "properties": {
+        "year": "公元前 206 年",
+        "dynasty": "",
+        "volume": "卷第八·秦纪三",
+        "wisdom": "在实力悬殊时，示弱可以暂时消除对手戒心。关键时刻需要有人敢于闯破僵局。",
+        "protagonists": [
+          "刘邦",
+          "项羽",
+          "张良",
+          "范增",
+          "樊哙"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:汉武帝": {
+      "type": "person",
+      "name": "汉武帝",
+      "properties": {
+        "cases": [
+          "推恩令"
+        ],
+        "period": "公元前 127 年"
+      }
+    },
+    "person:主父偃": {
+      "type": "person",
+      "name": "主父偃",
+      "properties": {
+        "cases": [
+          "推恩令"
+        ],
+        "period": "公元前 127 年"
+      }
+    },
+    "event:推恩令": {
+      "type": "event",
+      "name": "推恩令 - 和平改革",
+      "properties": {
+        "year": "公元前 127 年",
+        "dynasty": "",
+        "volume": "卷第十九·汉纪十一",
+        "wisdom": "给对手'恩赐'假象，实则逐步削弱。通过满足各方短期利益实现长期目标。",
+        "protagonists": [
+          "汉武帝",
+          "主父偃"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:王翦": {
+      "type": "person",
+      "name": "王翦",
+      "properties": {
+        "cases": [
+          "王翦求田问舍"
+        ],
+        "period": "公元前 224 年"
+      }
+    },
+    "person:秦始皇": {
+      "type": "person",
+      "name": "秦始皇",
+      "properties": {
+        "cases": [
+          "王翦求田问舍"
+        ],
+        "period": "公元前 224 年"
+      }
+    },
+    "event:王翦求田问舍": {
+      "type": "event",
+      "name": "王翦求田问舍 - 消除猜忌",
+      "properties": {
+        "year": "公元前 224 年",
+        "dynasty": "",
+        "volume": "卷第六·秦纪三",
+        "wisdom": "在权力中心，展示无害性比证明能力更重要。",
+        "protagonists": [
+          "王翦",
+          "秦始皇"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "event:楚汉争霸": {
+      "type": "event",
+      "name": "楚汉争霸 - 团队整合力对决",
+      "properties": {
+        "year": "公元前 206-前 202 年",
+        "dynasty": "",
+        "volume": "卷一至卷七·秦纪至汉纪一",
+        "wisdom": "个人能力再强也不如团队协作。真正的领导者不是最优秀的人，而是能让优秀的人为你工作的人。",
+        "protagonists": [
+          "刘邦",
+          "项羽"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:曹操": {
+      "type": "person",
+      "name": "曹操",
+      "properties": {
+        "cases": [
+          "赤壁之战",
+          "官渡之战"
+        ],
+        "period": "公元 208 年"
+      }
+    },
+    "person:孙权": {
+      "type": "person",
+      "name": "孙权",
+      "properties": {
+        "cases": [
+          "赤壁之战",
+          "刘备借荆州"
+        ],
+        "period": "公元 208 年"
+      }
+    },
+    "person:刘备": {
+      "type": "person",
+      "name": "刘备",
+      "properties": {
+        "cases": [
+          "赤壁之战",
+          "刘备借荆州"
+        ],
+        "period": "公元 208 年"
+      }
+    },
+    "person:周瑜": {
+      "type": "person",
+      "name": "周瑜",
+      "properties": {
+        "cases": [
+          "赤壁之战",
+          "草船借箭",
+          "刘备借荆州",
+          "诸葛亮联吴抗曹"
+        ],
+        "period": "公元 208 年"
+      }
+    },
+    "event:赤壁之战": {
+      "type": "event",
+      "name": "赤壁之战 - 以少胜多的经典案例",
+      "properties": {
+        "year": "公元 208 年",
+        "dynasty": "",
+        "volume": "卷第六十五·汉纪五十七",
+        "wisdom": "实力悬殊时不要硬拼，善用策略和盟友。轻敌是最大的敌人。",
+        "protagonists": [
+          "曹操",
+          "孙权",
+          "刘备",
+          "周瑜"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:苻坚": {
+      "type": "person",
+      "name": "苻坚",
+      "properties": {
+        "cases": [
+          "淝水之战",
+          "苻坚统一北方"
+        ],
+        "period": "公元 383 年"
+      }
+    },
+    "person:谢安": {
+      "type": "person",
+      "name": "谢安",
+      "properties": {
+        "cases": [
+          "淝水之战",
+          "苻坚统一北方"
+        ],
+        "period": "公元 383 年"
+      }
+    },
+    "event:淝水之战": {
+      "type": "event",
+      "name": "淝水之战 - 前秦 vs 东晋的生死对决",
+      "properties": {
+        "year": "公元 383 年",
+        "dynasty": "",
+        "volume": "卷第一百十六·晋纪三十八",
+        "wisdom": "人数优势不等于必胜。内部不稳 + 轻敌 = 失败。",
+        "protagonists": [
+          "苻坚",
+          "谢安"
+        ],
+        "outcome": "failure"
+      }
+    },
+    "person:袁绍": {
+      "type": "person",
+      "name": "袁绍",
+      "properties": {
+        "cases": [
+          "官渡之战"
+        ],
+        "period": "公元 200 年"
+      }
+    },
+    "event:官渡之战": {
+      "type": "event",
+      "name": "官渡之战 - 曹操统一北方的关键一战",
+      "properties": {
+        "year": "公元 200 年",
+        "dynasty": "",
+        "volume": "卷第六十四·汉纪五十六",
+        "wisdom": "劣势时不要硬拼，寻找对手弱点精准打击。",
+        "protagonists": [
+          "曹操",
+          "袁绍"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:勾践": {
+      "type": "person",
+      "name": "勾践",
+      "properties": {
+        "cases": [
+          "卧薪尝胆"
+        ],
+        "period": "公元前 496-前 473 年"
+      }
+    },
+    "person:范蠡": {
+      "type": "person",
+      "name": "范蠡",
+      "properties": {
+        "cases": [
+          "卧薪尝胆"
+        ],
+        "period": "公元前 496-前 473 年"
+      }
+    },
+    "person:文种": {
+      "type": "person",
+      "name": "文种",
+      "properties": {
+        "cases": [
+          "卧薪尝胆"
+        ],
+        "period": "公元前 496-前 473 年"
+      }
+    },
+    "event:卧薪尝胆": {
+      "type": "event",
+      "name": "卧薪尝胆 - 越王勾践复国记",
+      "properties": {
+        "year": "公元前 496-前 473 年",
+        "dynasty": "",
+        "volume": "卷第四·周纪四",
+        "wisdom": "真正的强者不是从不失败，而是能从低谷中重新崛起。",
+        "protagonists": [
+          "勾践",
+          "范蠡",
+          "文种"
+        ],
+        "outcome": "success"
+      }
+    },
+    "person:廉颇": {
+      "type": "person",
+      "name": "廉颇",
+      "properties": {
+        "cases": [
+          "将相和"
+        ],
+        "period": "公元前 279 年"
+      }
+    },
+    "person:蔺相如": {
+      "type": "person",
+      "name": "蔺相如",
+      "properties": {
+        "cases": [
+          "将相和"
+        ],
+        "period": "公元前 279 年"
+      }
+    },
+    "event:将相和": {
+      "type": "event",
+      "name": "将相和 - 廉颇蔺相如的团队协作故事",
+      "properties": {
+        "year": "公元前 279 年",
+        "dynasty": "",
+        "volume": "卷第四十三·秦纪四",
+        "wisdom": "真正的智慧不是争一时之气，而是顾全大局。",
+        "protagonists": [
+          "廉颇",
+          "蔺相如"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:李世民": {
+      "type": "person",
+      "name": "李世民",
+      "properties": {
+        "cases": [
+          "玄武门之变"
+        ],
+        "period": "公元 626 年"
+      }
+    },
+    "person:李建成": {
+      "type": "person",
+      "name": "李建成",
+      "properties": {
+        "cases": [
+          "玄武门之变"
+        ],
+        "period": "公元 626 年"
+      }
+    },
+    "event:玄武门之变": {
+      "type": "event",
+      "name": "玄武门之变 - 李世民夺取皇位的关键政变",
+      "properties": {
+        "year": "公元 626 年",
+        "dynasty": "",
+        "volume": "卷第一百九十二·唐纪八",
+        "wisdom": "权力斗争往往没有赢家。成功但道德代价高昂。",
+        "protagonists": [
+          "李世民",
+          "李建成"
+        ],
+        "outcome": "success"
+      }
+    },
+    "person:司马懿": {
+      "type": "person",
+      "name": "司马懿",
+      "properties": {
+        "cases": [
+          "高平陵之变"
+        ],
+        "period": "公元 249 年"
+      }
+    },
+    "person:曹爽": {
+      "type": "person",
+      "name": "曹爽",
+      "properties": {
+        "cases": [
+          "高平陵之变"
+        ],
+        "period": "公元 249 年"
+      }
+    },
+    "event:高平陵之变": {
+      "type": "event",
+      "name": "高平陵之变 - 司马懿夺权的关键政变",
+      "properties": {
+        "year": "公元 249 年",
+        "dynasty": "",
+        "volume": "卷七十一·魏纪三",
+        "wisdom": "真正的战略家懂得等待时机。隐忍不是软弱，而是为了关键时刻的致命一击。",
+        "protagonists": [
+          "司马懿",
+          "曹爽"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:宋钦宗": {
+      "type": "person",
+      "name": "宋钦宗",
+      "properties": {
+        "cases": [
+          "靖康之耻"
+        ],
+        "period": "公元 1127 年"
+      }
+    },
+    "person:金太宗": {
+      "type": "person",
+      "name": "金太宗",
+      "properties": {
+        "cases": [
+          "靖康之耻"
+        ],
+        "period": "公元 1127 年"
+      }
+    },
+    "person:李纲": {
+      "type": "person",
+      "name": "李纲",
+      "properties": {
+        "cases": [
+          "靖康之耻"
+        ],
+        "period": "公元 1127 年"
+      }
+    },
+    "event:靖康之耻": {
+      "type": "event",
+      "name": "靖康之耻 - 北宋灭亡的惨痛教训",
+      "properties": {
+        "year": "公元 1127 年",
+        "dynasty": "",
+        "volume": "卷二百七十六·宋纪百六十九",
+        "wisdom": "决策摇摆是最大的敌人。关键时刻必须统一认识、坚决执行。过度妥协只会换来更多侵略。",
+        "protagonists": [
+          "宋钦宗",
+          "金太宗",
+          "李纲"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:岳飞": {
+      "type": "person",
+      "name": "岳飞",
+      "properties": {
+        "cases": [
+          "岳飞抗金",
+          "刘豫认贼作父"
+        ],
+        "period": "公元 1134-1142 年"
+      }
+    },
+    "person:秦桧": {
+      "type": "person",
+      "name": "秦桧",
+      "properties": {
+        "cases": [
+          "岳飞抗金"
+        ],
+        "period": "公元 1134-1142 年"
+      }
+    },
+    "person:赵构": {
+      "type": "person",
+      "name": "赵构",
+      "properties": {
+        "cases": [
+          "岳飞抗金"
+        ],
+        "period": "公元 1134-1142 年"
+      }
+    },
+    "event:岳飞抗金": {
+      "type": "event",
+      "name": "岳飞抗金 - 民族英雄的忠烈故事",
+      "properties": {
+        "year": "公元 1134-1142 年",
+        "dynasty": "",
+        "volume": "卷二百七十九·宋纪百七十二",
+        "wisdom": "真正的忠诚需要勇气。牺牲个人利益甚至生命去坚持正确的事情，这种精神值得永远铭记。",
+        "protagonists": [
+          "岳飞",
+          "秦桧",
+          "赵构"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:王安石": {
+      "type": "person",
+      "name": "王安石",
+      "properties": {
+        "cases": [
+          "王安石变法"
+        ],
+        "period": "公元 1069-1085 年"
+      }
+    },
+    "person:司马光": {
+      "type": "person",
+      "name": "司马光",
+      "properties": {
+        "cases": [
+          "王安石变法",
+          "司马光编资治通鉴"
+        ],
+        "period": "公元 1069-1085 年"
+      }
+    },
+    "person:宋神宗": {
+      "type": "person",
+      "name": "宋神宗",
+      "properties": {
+        "cases": [
+          "王安石变法"
+        ],
+        "period": "公元 1069-1085 年"
+      }
+    },
+    "event:王安石变法": {
+      "type": "event",
+      "name": "王安石变法 - 北宋改革的尝试与失败",
+      "properties": {
+        "year": "公元 1069-1085 年",
+        "dynasty": "",
+        "volume": "卷二百三十四至二百三十六·宋纪百五十一至五十三",
+        "wisdom": "改革的勇气与智慧同样重要。激进改革虽能短期见效，但需考虑执行难度和反弹风险。",
+        "protagonists": [
+          "王安石",
+          "司马光",
+          "宋神宗"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:赵匡胤": {
+      "type": "person",
+      "name": "赵匡胤",
+      "properties": {
+        "cases": [
+          "杯酒释兵权",
+          "陈桥兵变"
+        ],
+        "period": "公元 961 年"
+      }
+    },
+    "person:石守信等禁军将领": {
+      "type": "person",
+      "name": "石守信等禁军将领",
+      "properties": {
+        "cases": [
+          "杯酒释兵权"
+        ],
+        "period": "公元 961 年"
+      }
+    },
+    "event:杯酒释兵权": {
+      "type": "event",
+      "name": "杯酒释兵权 - 和平解除武将威胁的经典案例",
+      "properties": {
+        "year": "公元 961 年",
+        "dynasty": "",
+        "volume": "卷二百九十·宋纪一",
+        "wisdom": "制度设计比个人能力更重要。通过制度安排 (杯酒释兵权) 解决权力继承问题，避免血腥斗争。",
+        "protagonists": [
+          "赵匡胤",
+          "石守信等禁军将领"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:赵普": {
+      "type": "person",
+      "name": "赵普",
+      "properties": {
+        "cases": [
+          "陈桥兵变"
+        ],
+        "period": "公元 960 年"
+      }
+    },
+    "person:石守信": {
+      "type": "person",
+      "name": "石守信",
+      "properties": {
+        "cases": [
+          "陈桥兵变"
+        ],
+        "period": "公元 960 年"
+      }
+    },
+    "event:陈桥兵变": {
+      "type": "event",
+      "name": "陈桥兵变 - 赵匡胤和平夺权的开国故事",
+      "properties": {
+        "year": "公元 960 年",
+        "dynasty": "",
+        "volume": "卷二百九十·宋纪一",
+        "wisdom": "真正的成功不仅是能力，更是把握时机。陈桥兵变以最小代价实现政权更迭，是政治智慧的典范。",
+        "protagonists": [
+          "赵匡胤",
+          "赵普",
+          "石守信"
+        ],
+        "outcome": "success"
+      }
+    },
+    "person:郑和": {
+      "type": "person",
+      "name": "郑和",
+      "properties": {
+        "cases": [
+          "郑和下西洋"
+        ],
+        "period": "公元 1405-1433 年"
+      }
+    },
+    "person:明成祖朱棣": {
+      "type": "person",
+      "name": "明成祖朱棣",
+      "properties": {
+        "cases": [
+          "郑和下西洋"
+        ],
+        "period": "公元 1405-1433 年"
+      }
+    },
+    "event:郑和下西洋": {
+      "type": "event",
+      "name": "郑和下西洋 - 古代中国海上远航的壮举",
+      "properties": {
+        "year": "公元 1405-1433 年",
+        "dynasty": "",
+        "volume": "卷二百一十二至二百十四·明纪一至三",
+        "wisdom": "开放包容带来繁荣。郑和下西洋展示了古代中国的航海技术和文化自信，但因政治原因中断令人遗憾。",
+        "protagonists": [
+          "郑和",
+          "明成祖朱棣"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:光绪帝": {
+      "type": "person",
+      "name": "光绪帝",
+      "properties": {
+        "cases": [
+          "戊戌变法"
+        ],
+        "period": "公元 1898 年"
+      }
+    },
+    "person:康有为": {
+      "type": "person",
+      "name": "康有为",
+      "properties": {
+        "cases": [
+          "戊戌变法"
+        ],
+        "period": "公元 1898 年"
+      }
+    },
+    "person:梁启超": {
+      "type": "person",
+      "name": "梁启超",
+      "properties": {
+        "cases": [
+          "戊戌变法"
+        ],
+        "period": "公元 1898 年"
+      }
+    },
+    "person:慈禧太后": {
+      "type": "person",
+      "name": "慈禧太后",
+      "properties": {
+        "cases": [
+          "戊戌变法"
+        ],
+        "period": "公元 1898 年"
+      }
+    },
+    "event:戊戌变法": {
+      "type": "event",
+      "name": "戊戌变法 - 晚清改革的最后一次尝试",
+      "properties": {
+        "year": "公元 1898 年",
+        "dynasty": "",
+        "volume": "卷三百八十四·清纪四十一",
+        "wisdom": "改革的勇气与策略同样重要。激进改革需要足够的支持力量和合适的时机，否则容易失败。",
+        "protagonists": [
+          "光绪帝",
+          "康有为",
+          "梁启超",
+          "慈禧太后"
+        ],
+        "outcome": "failure"
+      }
+    },
+    "person:刘恕": {
+      "type": "person",
+      "name": "刘恕",
+      "properties": {
+        "cases": [
+          "司马光编资治通鉴"
+        ],
+        "period": "公元 1068-1084 年"
+      }
+    },
+    "person:范祖禹": {
+      "type": "person",
+      "name": "范祖禹",
+      "properties": {
+        "cases": [
+          "司马光编资治通鉴"
+        ],
+        "period": "公元 1068-1084 年"
+      }
+    },
+    "event:司马光编资治通鉴": {
+      "type": "event",
+      "name": "司马光编资治通鉴 - 史学巨著背后的坚持",
+      "properties": {
+        "year": "公元 1068-1084 年",
+        "dynasty": "",
+        "volume": "卷二百三十五·宋纪百五十二",
+        "wisdom": "真正的价值需要时间沉淀。司马光用 19 年时间编纂这部巨著，证明了专注和坚持的力量。",
+        "protagonists": [
+          "司马光",
+          "刘恕",
+          "范祖禹"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:文天祥": {
+      "type": "person",
+      "name": "文天祥",
+      "properties": {
+        "cases": [
+          "文天祥正气歌"
+        ],
+        "period": "公元 1278-1279 年"
+      }
+    },
+    "event:文天祥正气歌": {
+      "type": "event",
+      "name": "文天祥正气歌 - 民族气节的永恒象征",
+      "properties": {
+        "year": "公元 1278-1279 年",
+        "dynasty": "",
+        "volume": "卷一百八十八·宋纪百七十八",
+        "wisdom": "真正的价值不仅在于成功，更在于坚持原则。文天祥虽未能挽救南宋，但其气节成为中华民族的精神支柱。",
+        "protagonists": [
+          "文天祥"
+        ],
+        "outcome": "success"
+      }
+    },
+    "event:刘邦逆袭楚汉争霸": {
+      "type": "event",
+      "name": "刘邦逆袭楚汉争霸",
+      "properties": {
+        "year": "",
+        "dynasty": "",
+        "volume": "",
+        "wisdom": "",
+        "protagonists": [],
+        "outcome": "neutral"
+      }
+    },
+    "event:郭子仪功高不震主": {
+      "type": "event",
+      "name": "郭子仪功高不震主",
+      "properties": {
+        "year": "",
+        "dynasty": "",
+        "volume": "",
+        "wisdom": "",
+        "protagonists": [],
+        "outcome": "neutral"
+      }
+    },
+    "event:李世民纳谏": {
+      "type": "event",
+      "name": "李世民纳谏",
+      "properties": {
+        "year": "",
+        "dynasty": "",
+        "volume": "",
+        "wisdom": "",
+        "protagonists": [],
+        "outcome": "neutral"
+      }
+    },
+    "event:王翦灭楚求田问舍": {
+      "type": "event",
+      "name": "王翦灭楚求田问舍",
+      "properties": {
+        "year": "",
+        "dynasty": "",
+        "volume": "",
+        "wisdom": "",
+        "protagonists": [],
+        "outcome": "neutral"
+      }
+    },
+    "event:谢安淝水之战": {
+      "type": "event",
+      "name": "谢安淝水之战",
+      "properties": {
+        "year": "",
+        "dynasty": "",
+        "volume": "",
+        "wisdom": "",
+        "protagonists": [],
+        "outcome": "neutral"
+      }
+    },
+    "person:诸葛亮": {
+      "type": "person",
+      "name": "诸葛亮",
+      "properties": {
+        "cases": [
+          "草船借箭",
+          "诸葛亮联吴抗曹"
+        ],
+        "period": "建安十三年 (208 年)"
+      }
+    },
+    "person:鲁肃": {
+      "type": "person",
+      "name": "鲁肃",
+      "properties": {
+        "cases": [
+          "草船借箭",
+          "刘备借荆州",
+          "诸葛亮联吴抗曹"
+        ],
+        "period": "建安十三年 (208 年)"
+      }
+    },
+    "event:草船借箭": {
+      "type": "event",
+      "name": "草船借箭 - 诸葛亮智取十万支箭",
+      "properties": {
+        "year": "建安十三年 (208 年)",
+        "dynasty": "汉纪",
+        "volume": "卷第六十五·汉纪五十七·建安十三年",
+        "wisdom": "真正的智慧不是硬拼，而是借势借力。诸葛亮利用大雾和曹操多疑，不费一兵一卒获得十万支箭，是'如虎添翼'的经典案例。",
+        "protagonists": [
+          "诸葛亮",
+          "周瑜",
+          "鲁肃"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:安禄山": {
+      "type": "person",
+      "name": "安禄山",
+      "properties": {
+        "cases": [
+          "安禄山认贼作父"
+        ],
+        "period": "天宝十四载 (755 年)"
+      }
+    },
+    "person:唐玄宗": {
+      "type": "person",
+      "name": "唐玄宗",
+      "properties": {
+        "cases": [
+          "安禄山认贼作父"
+        ],
+        "period": "天宝十四载 (755 年)"
+      }
+    },
+    "person:杨国忠": {
+      "type": "person",
+      "name": "杨国忠",
+      "properties": {
+        "cases": [
+          "安禄山认贼作父"
+        ],
+        "period": "天宝十四载 (755 年)"
+      }
+    },
+    "event:安禄山认贼作父": {
+      "type": "event",
+      "name": "安禄山认贼作父 - 唐玄宗的养子反成叛军首领",
+      "properties": {
+        "year": "天宝十四载 (755 年)",
+        "dynasty": "唐纪",
+        "volume": "卷第二百一十·唐纪二十六至二百十六·天宝十四载",
+        "wisdom": "认贼作父的代价：安禄山被唐玄宗收为养子，获得信任后却发动安史之乱。表面忠诚实则野心勃勃，最终导致唐朝由盛转衰。",
+        "protagonists": [
+          "安禄山",
+          "唐玄宗",
+          "杨国忠"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:张邦昌": {
+      "type": "person",
+      "name": "张邦昌",
+      "properties": {
+        "cases": [
+          "张邦昌认贼作父"
+        ],
+        "period": "靖康二年 (1127 年)"
+      }
+    },
+    "person:金国": {
+      "type": "person",
+      "name": "金国",
+      "properties": {
+        "cases": [
+          "张邦昌认贼作父",
+          "刘豫认贼作父"
+        ],
+        "period": "靖康二年 (1127 年)"
+      }
+    },
+    "person:宋高宗": {
+      "type": "person",
+      "name": "宋高宗",
+      "properties": {
+        "cases": [
+          "张邦昌认贼作父"
+        ],
+        "period": "靖康二年 (1127 年)"
+      }
+    },
+    "event:张邦昌认贼作父": {
+      "type": "event",
+      "name": "张邦昌认贼作父 - 金国扶植的傀儡皇帝",
+      "properties": {
+        "year": "靖康二年 (1127 年)",
+        "dynasty": "宋纪",
+        "volume": "卷第二百二十七·宋纪一百七十九至二百二十八·靖康二年至建炎元年",
+        "wisdom": "认贼作父的耻辱：北宋灭亡后，金国扶植张邦昌为傀儡皇帝。他虽暂时保住性命，但被后世视为'汉奸'典型。",
+        "protagonists": [
+          "张邦昌",
+          "金国",
+          "宋高宗"
+        ],
+        "outcome": "failure"
+      }
+    },
+    "person:刘豫": {
+      "type": "person",
+      "name": "刘豫",
+      "properties": {
+        "cases": [
+          "刘豫认贼作父"
+        ],
+        "period": "建炎三年 (1129 年)"
+      }
+    },
+    "event:刘豫认贼作父": {
+      "type": "event",
+      "name": "刘豫认贼作父 - 金国扶植的'大齐'皇帝",
+      "properties": {
+        "year": "建炎三年 (1129 年)",
+        "dynasty": "宋纪",
+        "volume": "卷第二百二十八·宋纪一百二十九至二百三十·建炎三年至绍兴七年",
+        "wisdom": "认贼作父的结局：刘豫被金国扶植为'大齐'皇帝，与南宋对抗。最终金国觉得他没用，废黜了他。",
+        "protagonists": [
+          "刘豫",
+          "金国",
+          "岳飞"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "event:刘备借荆州": {
+      "type": "event",
+      "name": "刘备借荆州 - 弱者借助外力实现如虎添翼",
+      "properties": {
+        "year": "建安十三至十四年 (208-209 年)",
+        "dynasty": "汉纪",
+        "volume": "卷第六十五·汉纪五十七至六十六·建安十三年至十四年",
+        "wisdom": "如虎添翼的本质：弱者借助外力实现质变。刘备从流浪创业到一方诸侯，关键就是'借荆州'这一步。借力不是乞讨，而是战略投资。",
+        "protagonists": [
+          "刘备",
+          "孙权",
+          "周瑜",
+          "鲁肃"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "event:诸葛亮联吴抗曹": {
+      "type": "event",
+      "name": "诸葛亮联吴抗曹 - 弱者联盟实现如虎添翼",
+      "properties": {
+        "year": "建安十三年 (208 年)",
+        "dynasty": "汉纪",
+        "volume": "卷第六十五·汉纪五十七·建安十三年",
+        "wisdom": "弱者必须结盟：单独对抗强者=送死，联盟=实力倍增。诸葛亮说'可与为援而不可图'，联盟不是吞并，是共赢。如虎添翼的关键在于找到互补的合作伙伴。",
+        "protagonists": [
+          "诸葛亮",
+          "周瑜",
+          "鲁肃"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:谢玄": {
+      "type": "person",
+      "name": "谢玄",
+      "properties": {
+        "cases": [
+          "苻坚统一北方"
+        ],
+        "period": "太元四至八年 (379-383 年)"
+      }
+    },
+    "event:苻坚统一北方": {
+      "type": "event",
+      "name": "苻坚统一北方 - 如虎添翼的双刃剑",
+      "properties": {
+        "year": "太元四至八年 (379-383 年)",
+        "dynasty": "晋纪",
+        "volume": "卷第一百一十·晋纪三十二·太元四年至八年",
+        "wisdom": "如虎添翼的双刃剑：强者借助外力变得更强大，但也容易轻敌。苻坚统一北方后觉得自己无敌了，结果淝水之战被 8 万东晋军打败 80 万大军。实力太强反而成为失败原因。",
+        "protagonists": [
+          "苻坚",
+          "谢安",
+          "谢玄"
+        ],
+        "outcome": "failure"
+      }
+    },
+    "person:塞翁": {
+      "type": "person",
+      "name": "塞翁",
+      "properties": {
+        "cases": [
+          "塞翁失马焉知非福"
+        ],
+        "period": "战国时期 (约公元前 246 年)"
+      }
+    },
+    "event:塞翁失马焉知非福": {
+      "type": "event",
+      "name": "塞翁失马焉知非福 - 祸福相依的智慧",
+      "properties": {
+        "year": "战国时期 (约公元前 246 年)",
+        "dynasty": "秦纪",
+        "volume": "卷第二·秦纪二·秦始皇三年 (典故出自《淮南子》)",
+        "wisdom": "祸福相依，坏事可能变成好事。塞翁失马后不悲，得马后不喜，最终儿子因骑马摔伤免于战死。真正的智慧是：面对得失保持平常心，相信危机中蕴含转机。",
+        "protagonists": [
+          "塞翁"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:量子力学历史": {
+      "type": "person",
+      "name": "量子力学历史",
+      "properties": {
+        "cases": [
+          "量子力学历史 - 20260324"
+        ],
+        "period": "2026 年"
+      }
+    },
+    "event:量子力学历史 - 20260324": {
+      "type": "event",
+      "name": "量子力学历史 - 历史智慧与现代启示",
+      "properties": {
+        "year": "2026 年",
+        "dynasty": "现代",
+        "volume": "网络搜索结果·量子力学历史",
+        "wisdom": "量子力学历史的历史智慧：通过研究相关历史事件和故事，提取其中的核心智慧和启示。",
+        "protagonists": [
+          "量子力学历史"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:区块链历史": {
+      "type": "person",
+      "name": "区块链历史",
+      "properties": {
+        "cases": [
+          "区块链历史 - 20260324"
+        ],
+        "period": "2026 年"
+      }
+    },
+    "event:区块链历史 - 20260324": {
+      "type": "event",
+      "name": "区块链历史 - 历史智慧与现代启示",
+      "properties": {
+        "year": "2026 年",
+        "dynasty": "现代",
+        "volume": "网络搜索结果·区块链历史",
+        "wisdom": "区块链历史的历史智慧：通过研究相关历史事件和故事，提取其中的核心智慧和启示。",
+        "protagonists": [
+          "区块链历史"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:田忌": {
+      "type": "person",
+      "name": "田忌",
+      "properties": {
+        "cases": [
+          "田忌赛马"
+        ],
+        "period": "公元前 354 年"
+      }
+    },
+    "person:孙膑": {
+      "type": "person",
+      "name": "孙膑",
+      "properties": {
+        "cases": [
+          "田忌赛马"
+        ],
+        "period": "公元前 354 年"
+      }
+    },
+    "person:齐威王": {
+      "type": "person",
+      "name": "齐威王",
+      "properties": {
+        "cases": [
+          "田忌赛马"
+        ],
+        "period": "公元前 354 年"
+      }
+    },
+    "event:田忌赛马": {
+      "type": "event",
+      "name": "田忌赛马 - 以弱胜强的经典策略",
+      "properties": {
+        "year": "公元前 354 年",
+        "dynasty": "战国",
+        "volume": "卷第一·周纪一·威烈王二十三年 (典故出自《史记》)",
+        "wisdom": "田忌赛马的核心智慧：在整体实力不如对手的情况下，通过巧妙的策略安排，扬长避短，以弱胜强。孙膑建议用下等马对上等马、上等马对中等马、中等马对下等马，三局两胜。这体现了：1) 资源优化配置 2) 差异化竞",
+        "protagonists": [
+          "田忌",
+          "孙膑",
+          "齐威王"
+        ],
+        "outcome": "neutral"
+      }
+    },
+    "person:量子力学": {
+      "type": "person",
+      "name": "量子力学",
+      "properties": {
+        "cases": [
+          "量子力学 - 20260324"
+        ],
+        "period": "2026 年"
+      }
+    },
+    "event:量子力学 - 20260324": {
+      "type": "event",
+      "name": "量子力学 - 历史智慧与现代启示",
+      "properties": {
+        "year": "2026 年",
+        "dynasty": "现代",
+        "volume": "网络搜索结果·量子力学",
+        "wisdom": "量子力学的历史智慧：通过研究相关历史事件和故事，提取其中的核心智慧和启示。",
+        "protagonists": [
+          "量子力学"
+        ],
+        "outcome": "neutral"
+      }
+    }
+  },
+  "relations": [
+    {
+      "source": "person:刘邦",
+      "target": "event:鸿门宴",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:项羽",
+      "target": "event:鸿门宴",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:张良",
+      "target": "event:鸿门宴",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:范增",
+      "target": "event:鸿门宴",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:樊哙",
+      "target": "event:鸿门宴",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:汉武帝",
+      "target": "event:推恩令",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:主父偃",
+      "target": "event:推恩令",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:王翦",
+      "target": "event:王翦求田问舍",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:秦始皇",
+      "target": "event:王翦求田问舍",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:刘邦",
+      "target": "event:楚汉争霸",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:项羽",
+      "target": "event:楚汉争霸",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:曹操",
+      "target": "event:赤壁之战",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:孙权",
+      "target": "event:赤壁之战",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:刘备",
+      "target": "event:赤壁之战",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:周瑜",
+      "target": "event:赤壁之战",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:苻坚",
+      "target": "event:淝水之战",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:谢安",
+      "target": "event:淝水之战",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:苻坚",
+      "target": "person:谢安",
+      "type": "enemy"
+    },
+    {
+      "source": "person:曹操",
+      "target": "event:官渡之战",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:袁绍",
+      "target": "event:官渡之战",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:勾践",
+      "target": "event:卧薪尝胆",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:范蠡",
+      "target": "event:卧薪尝胆",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:文种",
+      "target": "event:卧薪尝胆",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:勾践",
+      "target": "person:范蠡",
+      "type": "enemy"
+    },
+    {
+      "source": "person:勾践",
+      "target": "person:文种",
+      "type": "enemy"
+    },
+    {
+      "source": "person:范蠡",
+      "target": "person:文种",
+      "type": "enemy"
+    },
+    {
+      "source": "person:廉颇",
+      "target": "event:将相和",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:蔺相如",
+      "target": "event:将相和",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:李世民",
+      "target": "event:玄武门之变",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:李建成",
+      "target": "event:玄武门之变",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:司马懿",
+      "target": "event:高平陵之变",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:曹爽",
+      "target": "event:高平陵之变",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:司马懿",
+      "target": "person:曹爽",
+      "type": "enemy"
+    },
+    {
+      "source": "person:宋钦宗",
+      "target": "event:靖康之耻",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:金太宗",
+      "target": "event:靖康之耻",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:李纲",
+      "target": "event:靖康之耻",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:岳飞",
+      "target": "event:岳飞抗金",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:秦桧",
+      "target": "event:岳飞抗金",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:赵构",
+      "target": "event:岳飞抗金",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:王安石",
+      "target": "event:王安石变法",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:司马光",
+      "target": "event:王安石变法",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:宋神宗",
+      "target": "event:王安石变法",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:赵匡胤",
+      "target": "event:杯酒释兵权",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:石守信等禁军将领",
+      "target": "event:杯酒释兵权",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:赵匡胤",
+      "target": "event:陈桥兵变",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:赵普",
+      "target": "event:陈桥兵变",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:石守信",
+      "target": "event:陈桥兵变",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:郑和",
+      "target": "event:郑和下西洋",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:明成祖朱棣",
+      "target": "event:郑和下西洋",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:光绪帝",
+      "target": "event:戊戌变法",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:康有为",
+      "target": "event:戊戌变法",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:梁启超",
+      "target": "event:戊戌变法",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:慈禧太后",
+      "target": "event:戊戌变法",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:光绪帝",
+      "target": "person:康有为",
+      "type": "enemy"
+    },
+    {
+      "source": "person:光绪帝",
+      "target": "person:梁启超",
+      "type": "enemy"
+    },
+    {
+      "source": "person:光绪帝",
+      "target": "person:慈禧太后",
+      "type": "enemy"
+    },
+    {
+      "source": "person:康有为",
+      "target": "person:梁启超",
+      "type": "enemy"
+    },
+    {
+      "source": "person:康有为",
+      "target": "person:慈禧太后",
+      "type": "enemy"
+    },
+    {
+      "source": "person:梁启超",
+      "target": "person:慈禧太后",
+      "type": "enemy"
+    },
+    {
+      "source": "person:司马光",
+      "target": "event:司马光编资治通鉴",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:刘恕",
+      "target": "event:司马光编资治通鉴",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:范祖禹",
+      "target": "event:司马光编资治通鉴",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:文天祥",
+      "target": "event:文天祥正气歌",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:诸葛亮",
+      "target": "event:草船借箭",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:周瑜",
+      "target": "event:草船借箭",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:鲁肃",
+      "target": "event:草船借箭",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:安禄山",
+      "target": "event:安禄山认贼作父",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:唐玄宗",
+      "target": "event:安禄山认贼作父",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:杨国忠",
+      "target": "event:安禄山认贼作父",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:张邦昌",
+      "target": "event:张邦昌认贼作父",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:金国",
+      "target": "event:张邦昌认贼作父",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:宋高宗",
+      "target": "event:张邦昌认贼作父",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:刘豫",
+      "target": "event:刘豫认贼作父",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:金国",
+      "target": "event:刘豫认贼作父",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:岳飞",
+      "target": "event:刘豫认贼作父",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:刘豫",
+      "target": "person:金国",
+      "type": "enemy"
+    },
+    {
+      "source": "person:刘豫",
+      "target": "person:岳飞",
+      "type": "enemy"
+    },
+    {
+      "source": "person:金国",
+      "target": "person:岳飞",
+      "type": "enemy"
+    },
+    {
+      "source": "person:刘备",
+      "target": "event:刘备借荆州",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:孙权",
+      "target": "event:刘备借荆州",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:周瑜",
+      "target": "event:刘备借荆州",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:鲁肃",
+      "target": "event:刘备借荆州",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:刘备",
+      "target": "person:孙权",
+      "type": "enemy"
+    },
+    {
+      "source": "person:刘备",
+      "target": "person:周瑜",
+      "type": "enemy"
+    },
+    {
+      "source": "person:刘备",
+      "target": "person:鲁肃",
+      "type": "enemy"
+    },
+    {
+      "source": "person:孙权",
+      "target": "person:周瑜",
+      "type": "enemy"
+    },
+    {
+      "source": "person:孙权",
+      "target": "person:鲁肃",
+      "type": "enemy"
+    },
+    {
+      "source": "person:周瑜",
+      "target": "person:鲁肃",
+      "type": "enemy"
+    },
+    {
+      "source": "person:诸葛亮",
+      "target": "event:诸葛亮联吴抗曹",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:周瑜",
+      "target": "event:诸葛亮联吴抗曹",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:鲁肃",
+      "target": "event:诸葛亮联吴抗曹",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:诸葛亮",
+      "target": "person:周瑜",
+      "type": "ally"
+    },
+    {
+      "source": "person:诸葛亮",
+      "target": "person:鲁肃",
+      "type": "ally"
+    },
+    {
+      "source": "person:苻坚",
+      "target": "event:苻坚统一北方",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:谢安",
+      "target": "event:苻坚统一北方",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:谢玄",
+      "target": "event:苻坚统一北方",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:苻坚",
+      "target": "person:谢玄",
+      "type": "enemy"
+    },
+    {
+      "source": "person:谢安",
+      "target": "person:谢玄",
+      "type": "enemy"
+    },
+    {
+      "source": "person:塞翁",
+      "target": "event:塞翁失马焉知非福",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:量子力学历史",
+      "target": "event:量子力学历史 - 20260324",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:区块链历史",
+      "target": "event:区块链历史 - 20260324",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:田忌",
+      "target": "event:田忌赛马",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:孙膑",
+      "target": "event:田忌赛马",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:齐威王",
+      "target": "event:田忌赛马",
+      "type": "participated_in"
+    },
+    {
+      "source": "person:量子力学",
+      "target": "event:量子力学 - 20260324",
+      "type": "participated_in"
+    }
+  ],
+  "statistics": {
+    "total_entities": 101,
+    "total_relations": 105,
+    "entity_types": {
+      "person": 64,
+      "event": 37
+    }
+  }
+}
