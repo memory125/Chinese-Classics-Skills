@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+"""
+# -*- coding: utf-8 -*-
+"""
 """
 最终版 V11：完美格式
 1. 读取 V10 并提取所有唯一卦象

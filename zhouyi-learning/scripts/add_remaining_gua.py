@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+"""
 """
 补充 V11 中缺失的 11 卦：
 1. 水雷屯䷂

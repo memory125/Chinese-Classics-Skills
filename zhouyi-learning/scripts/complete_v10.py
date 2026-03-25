@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+"""
+# -*- coding: utf-8 -*-
+"""
 """
 完善 V10 终极版：
 1. 删除 8 个重复卦象

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+"""
+# -*- coding: utf-8 -*-
+"""
 """
 修复 V11 格式问题：
 1. 修正重复的卦名（### 1. 1. → ### 1.）

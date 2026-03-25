@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+"""
+# -*- coding: utf-8 -*-
+"""
 """
 生成 V11 终极版 - 完美 64 卦
 1. 读取 V10 并去重
