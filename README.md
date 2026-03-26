@@ -1,12 +1,26 @@
 # 📚 Chinese Classics Skills (中国经典智慧学习平台)
 
-一个基于 OpenClaw 的智能技能集合，整合了中国三大经典著作的学习工具：《资治通鉴》、《周易》和《黄帝内经》。
+一个基于 OpenClaw 的智能技能集合，整合了中国四大经典著作的学习工具：《道德经》、《资治通鉴》、《周易》和《黄帝内经》。
 
 ---
 
 ## 🎯 项目简介
 
-本项目提供三个核心技能模块，帮助用户深入学习和应用中国古代经典智慧：
+本项目提供四个核心技能模块，帮助用户深入学习和应用中国古代经典智慧：
+
+### 🧘 **0. 道德经 Skill** (daode-jing) ⭐ 新增
+- **版本**: v3.0
+- **功能**: 
+  - ✅ 八十一章完整原文库
+  - ✅ 佛学对照解读（200+ 条对照）
+  - ✅ 现代场景映射（250+ 应用场景）
+  - ✅ 个性化推荐引擎
+  - ✅ 白话文智能翻译
+  - ✅ 修行实践指南
+- **特色**: 
+  - 道家智慧现代化应用
+  - 佛道思想对比学习
+  - 生活/职场场景化解读
 
 ### 📖 **1. 资治通鉴 Skill** (zizhi-tongjian)
 - **版本**: v3.0
@@ -24,7 +38,7 @@
   - 多轮对话 AI 助手
   - 现代应用场景映射
 
-### 📜 **2. 周易学习 Skill** (zhouyi-learning)
+### 📜 **3. 周易学习 Skill** (zhouyi-learning)
 - **版本**: v1.0
 - **功能**:
   - ✅ 六十四卦完整查询系统
@@ -38,7 +52,7 @@
   - 实用解卦方法
   - 历史案例辅助理解
 
-### 🌿 **3. 黄帝内经 Skill** (huangdi-neijing)
+### 🌿 **4. 黄帝内经 Skill** (huangdi-neijing)
 - **版本**: v1.0
 - **功能**:
   - ✅ 基础理论系统讲解
@@ -82,6 +96,10 @@ OpenClaw CLI
    "帮我查一下乾卦"
    "今天每日一卦是什么？"
    
+   # 道德经
+   "道可道非常道的含义是什么？"
+   "无为而治在现代管理中的应用"
+   
    # 黄帝内经
    "头痛，失眠，乏力怎么办？"
    "春季如何养生？"
@@ -104,6 +122,17 @@ OpenClaw CLI
 
 ```
 Chinese-Classics-Skills/
+├── daode-jing/                   # 道德经 Skill (v3.0) ⭐ 新增
+│   ├── data/                     # 原文 + 佛学对照 + 场景映射
+│   │   ├── jing.txt              # 八十一章原文
+│   │   ├── buddhist_comparison.txt  # 200+ 条佛道对照
+│   │   └── modern_scenarios.txt  # 250+ 现代应用场景
+│   ├── scripts/                  # 核心功能脚本
+│   │   ├── main.py               # 主查询引擎
+│   │   └── personal_recommendation.py  # 个性化推荐
+│   ├── README.md                 # 使用文档
+│   └── SKILL.md                  # OpenClaw Skill 定义
+│
 ├── zizhi-tongjian/              # 资治通鉴 Skill (v3.0)
 │   ├── api/                      # FastAPI RESTful API
 │   ├── database/                 # SQLite 原文数据库
@@ -129,6 +158,17 @@ Chinese-Classics-Skills/
 ---
 
 ## 📊 核心功能演示
+
+### 🧘 **道德经 - 智能解读**
+```python
+from daode-jing.scripts.main import DaodeJingSearcher
+
+searcher = DaodeJingSearcher()
+result = searcher.search("无为而治", include_buddhist=True)
+print(result['chapter'])      # 原文章节
+print(result['interpretation']) # 白话解读
+print(result['buddhist_comparison']) # 佛学对照
+```
 
 ### 🔍 **资治通鉴 - 智能搜索**
 ```python
@@ -193,6 +233,12 @@ print(advice)
 
 ## 📈 项目统计
 
+### 道德经 Skill (v3.0) ⭐ 新增
+- ✅ 原文库：81 章完整内容
+- ✅ 佛学对照：200+ 条深度对比
+- ✅ 场景映射：250+ 现代应用场景
+- ✅ 推荐引擎：个性化学习路径
+
 ### 资治通鉴 Skill (v3.0)
 - ✅ 案例库：200+ 精选历史案例
 - ✅ 原文数据库：294+ 卷完整内容
@@ -238,6 +284,7 @@ print(advice)
 
 ## 🔗 相关链接
 
+- **道德经详细文档**: [`daode-jing/README.md`](daode-jing/README.md) ⭐ 新增
 - **资治通鉴详细文档**: [`zizhi-tongjian/README.md`](zizhi-tongjian/README.md)
 - **周易学习详细文档**: [`zhouyi-learning/README.md`](zhouyi-learning/README.md)
 - **黄帝内经详细文档**: [`huangdi-neijing/README.md`](huangdi-neijing/README.md)
@@ -246,7 +293,7 @@ print(advice)
 
 **🎉 立即开始您的中国经典智慧学习之旅！**
 
-*最后更新：2026-03-25*  
-*版本：v1.0*  
+*最后更新：2026-03-26*  
+*版本：v1.1 (新增道德经 v3.0)*  
 *维护者：memory125*  
 *仓库地址：https://github.com/memory125/Chinese-Classics-Skills*
